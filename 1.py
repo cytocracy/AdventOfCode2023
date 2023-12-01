@@ -42,7 +42,7 @@ def getFirstWord(string):
     if minword == "":
         return None
     
-    #if theres a number before the word, return None
+    
     for i in range(0, minindex):
         if isNumeric(string[i]):
             return None
