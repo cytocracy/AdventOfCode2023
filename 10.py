@@ -135,10 +135,10 @@ def countpipes(loc):
                 curr = temp
                 if tiles[temp] == "J":
                     count += 2
-                    print("LJ")
+                    # print("LJ")
                 else:
                     count += 1
-                    print("L7")
+                    # print("L7")
             elif tiles[curr] == "F":
                 # print('found f')
                 temp = (curr[0], curr[1] + 1)
@@ -148,13 +148,13 @@ def countpipes(loc):
                 curr = temp
                 if tiles[temp] == "7":
                     count += 2
-                    print("F7")
+                    # print("F7")
                 else:
                     count += 1
-                    print("FJ")
+                    # print("FJ")
             else:
                 count += 1
-                print(tiles[curr])
+                # print(tiles[curr])
     return count
 
 
@@ -176,16 +176,16 @@ printstrings = lines
 for i in range(len(printstrings)):
     for j in range(len(printstrings[i])):
         if (i, j) == start:
-            printstrings[i] = printstrings[i][:j] + tiles[start] + printstrings[i][j+1:]
+            printstrings[i] = printstrings[i][:j] + "." + printstrings[i][j+1:]
         elif (i, j) not in usedpipes:
             printstrings[i] = printstrings[i][:j] + " " + printstrings[i][j+1:]
         else:
-            # printstrings[i] = printstrings[i][:j] + "." + printstrings[i][j+1:]
+            printstrings[i] = printstrings[i][:j] + "." + printstrings[i][j+1:]
             pass
         if (i, j) in inside:
             printstrings[i] = printstrings[i][:j] + "I" + printstrings[i][j+1:]
         elif (i, j) in ground:
-            printstrings[i] = printstrings[i][:j] + "O" + printstrings[i][j+1:]
+            printstrings[i] = printstrings[i][:j] + " " + printstrings[i][j+1:]
 
 for line in printstrings:
     print(line)
