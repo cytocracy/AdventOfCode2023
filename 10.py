@@ -125,8 +125,8 @@ def countpipes(loc):
         curr = (curr[0], curr[1]+1)
         # print(curr)
         if curr in usedpipes:
-            if curr == start:
-                print("start")
+            # if curr == start:
+                # print("start")
             # print("used")
             if tiles[curr] == "L":
                 temp = (curr[0], curr[1] + 1)
